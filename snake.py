@@ -112,6 +112,10 @@ class Game:
 
             self.snake.take_step(command, self.apple)
 
+            if len(self.snake.body) == self.height * self.width:
+                print("Nice Job Boi, You Win")
+                break
+
             if self.apple.location == self.snake.head:
                 points += 1
 
@@ -126,5 +130,5 @@ class Game:
                 break
 
 if __name__ == "__main__":
-    game = Game(10, 20)
+    game = Game(5, 5)
     game.run()
